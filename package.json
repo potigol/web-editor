@@ -39,7 +39,7 @@
     "prop-types": "^15.6.0",
     "raf": "^3.3.2",
     "react": "^16.5.0",
-    "react-ace": "react-ace"
+    "react-ace": "react-ace",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.5.0",
     "sass-loader": "^6.0.6",
