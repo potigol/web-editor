@@ -12,6 +12,7 @@ module.exports = {
     loaders: [
       { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
+      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=app/images/[name].[ext]"},
     ]
   },
   resolve: {

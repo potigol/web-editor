@@ -15,8 +15,8 @@ class Editor extends Component {
 				theme="tomorrow_night"
 				name="editor-potigol"
 				editorProps={{$blockScrolling: true}}
-				width="100vw"
-				height="100vh"
+				width="100%"
+				height="calc(100vh - 54px)"
 				fontSize="17px"
 				showPrintMargin={false}
 			/>
