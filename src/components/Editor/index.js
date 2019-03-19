@@ -7,19 +7,25 @@ import 'brace/mode/javascript';
 import '../../modules/ace/potigol';
 import 'brace/theme/tomorrow_night';
 
+// components
+import RunNav from '../RunNav';
+
 class Editor extends Component {
 	render() {
 		return (
-			<AceEditor
-				mode="potigol"
-				theme="tomorrow_night"
-				name="editor-potigol"
-				editorProps={{$blockScrolling: true}}
-				width="100%"
-				height="calc(100vh - 54px)"
-				fontSize="17px"
-				showPrintMargin={false}
-			/>
+			<div className="code-editor-main">
+				<RunNav />
+				<AceEditor
+					mode="potigol"
+					theme="tomorrow_night"
+					name="editor-potigol"
+					editorProps={{$blockScrolling: true}}
+					width="100%"
+					height="calc(100vh - 104px)"
+					fontSize="16px"
+					showPrintMargin={false}
+				/>
+			</div>
 		);
 	}
 }

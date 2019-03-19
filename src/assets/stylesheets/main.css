@@ -6,6 +6,7 @@
 body {
   font-family: helvetica;
   font-weight: 400;
+	overflow: hidden;
 }
 
 .navbar {
@@ -34,7 +35,38 @@ body {
 }
 
 /* wrapper */
-.wrapper > #editor-potigol {
-	border-top: 1px solid #211f1f;
+.wrapper #editor-potigol {
 	box-sizing: border-box;
+}
+
+.wrapper > .code-editor-main > .nav-file {
+	background-color: #1d1f21;
+	box-sizing: border-box;
+	border-top: 1px solid #ced2cf24;
+	border-bottom: 1px solid #ced2cf24;
+	padding: 10px 0 10px 10px;
+	color: #c5c8a0;
+}
+
+.wrapper > .code-editor-main > .nav-file > .file-run {
+	display: flex;
+	cursor: pointer;
+	user-select: none;
+	opacity: .6;
+	transition: all .2s ease;
+}
+
+.wrapper > .code-editor-main > .nav-file > .file-run:hover {
+	opacity: 1;
+}
+
+.wrapper > .code-editor-main > .nav-file > .file-run > .icon img {
+	width: 25px;
+	height: 25px;
+}
+
+.wrapper > .code-editor-main > .nav-file > .file-run > .title {
+	font-size: 15px;
+	line-height: 25px;
+	margin: 0 0 0 10px;
 }

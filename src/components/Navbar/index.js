@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-import brace from 'brace';
-import AceEditor from 'react-ace';
-
-// editor themes
-import 'brace/mode/javascript';
-import '../../modules/ace/potigol';
-import 'brace/theme/tomorrow_night';
 
 // assets
 import Img_logo from '../../assets/imgs/logo.jpg';
