@@ -4,6 +4,8 @@ const app = express();
 // Import routes
 const appRouter = require('./routes');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/api', appRouter);
 app.set('port', 3000);
 app.listen(app.get('port'), function() {

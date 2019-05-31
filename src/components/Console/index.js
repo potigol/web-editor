@@ -15,12 +15,11 @@ class MyTerminal extends React.Component {
                     const terminal = this.terminal.current;
 
                     props.run().then(resp => {
-                        resp.text().then(text => {
-                            terminal.pushToStdout(text);
-                        });
+                        terminal.clearStdout();
+                        terminal.pushToStdout(resp.out);
                     });
 
-                    return '...'
+                    return 'loading output ...'
                 }
             }
         }
@@ -34,6 +33,7 @@ class MyTerminal extends React.Component {
             welcomeMessage={'Welcome to Potigol Web, write <run> bellow to execute you code. Enjoy 🦐'}
             promptLabel={'me@Camarao:~$'}
             textColor={'#e2e2e2'}
+            background={'#111'}
             />
             )
     }
