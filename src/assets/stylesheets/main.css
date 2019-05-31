@@ -6,7 +6,8 @@
 body {
   font-family: helvetica;
   font-weight: 400;
-	overflow: hidden;
+  overflow: hidden;
+  background-color: #212121;
 }
 
 .navbar {
@@ -16,18 +17,18 @@ body {
 	z-index: 10;
 }
 
-.navbar > .brand {
+.navbar  .brand {
 	display: flex;
 	padding: 10px;
 	user-select: none;
 }
 
-.navbar > .brand > #potigol-logo > img {
+.navbar  .brand  #potigol-logo  img {
 	width: 30px;
 	border-radius: 25px;
 }
 
-.navbar > .brand > .title {
+.navbar  .brand  .title {
 	font-size: 17px;
 	font-weight: bold;
 	line-height: 30px;
@@ -39,7 +40,7 @@ body {
 	box-sizing: border-box;
 }
 
-.wrapper > .code-editor-main > .nav-file {
+.wrapper  .code-editor-main  .nav-file {
 	background-color: #1d1f21;
 	box-sizing: border-box;
 	border-top: 1px solid #ced2cf24;
@@ -48,7 +49,7 @@ body {
 	color: #c5c8a0;
 }
 
-.wrapper > .code-editor-main > .nav-file > .file-run {
+.wrapper  .code-editor-main  .nav-file  .file-run {
 	display: flex;
 	cursor: pointer;
 	user-select: none;
@@ -56,17 +57,39 @@ body {
 	transition: all .2s ease;
 }
 
-.wrapper > .code-editor-main > .nav-file > .file-run:hover {
+.wrapper  .code-editor-main  .nav-file  .file-run:hover {
 	opacity: 1;
 }
 
-.wrapper > .code-editor-main > .nav-file > .file-run > .icon img {
+.wrapper  .code-editor-main  .nav-file  .file-run  .icon img {
 	width: 25px;
 	height: 25px;
 }
 
-.wrapper > .code-editor-main > .nav-file > .file-run > .title {
+.wrapper  .code-editor-main  .nav-file  .file-run  .title {
 	font-size: 15px;
 	line-height: 25px;
 	margin: 0 0 0 10px;
+}
+
+
+.code-editor-main {
+	width: 100vw;
+	display: flex;
+}
+
+.code-editor-main .left-asgn {
+	width: 60%;
+}
+
+.code-editor-main .right-asgn {
+	width: 40%;
+}
+
+.code-editor-main .right-asgn div[name=react-console-emulator] {
+	box-sizing: border-box;
+}
+
+input[name=react-console-emulator__input] {
+	outline:none;
 }
