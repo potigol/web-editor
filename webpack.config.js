@@ -32,11 +32,17 @@ module.exports = {
     plugins: [
     new webpack.HotModuleReplacementPlugin()
     ],
+    devtool: false,
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     devServer: {
         contentBase: './dist',
         hot: true,
         proxy: {
           '/api': 'http://localhost:3000/',
-        }
-    }
+      }
+  }
 };
