@@ -31,10 +31,14 @@
     "css-loader": "^2.1.1",
     "express": "^4.17.1",
     "file-loader": "^3.0.1",
+    "lowdb": "^1.0.0",
     "react": "^16.8.6",
     "react-ace": "^7.0.1",
     "react-console-emulator": "^2.0.0",
     "react-dom": "^16.8.6",
     "style-loader": "^0.23.1"
+  },
+  "nodemonConfig": {
+    "ext": "js"
   }
 }

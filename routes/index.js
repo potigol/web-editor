@@ -7,8 +7,6 @@ var brutgol = require('../libs/brutgol');
 router.post('/run', function(req, res, next) {
 	var code = req.body.code;
 
-	console.log(req.body)
-
 	if(code.trim().length > 2){
 		brutgol(code).then(result => {
 	  		res.send(result);
