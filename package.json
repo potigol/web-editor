@@ -36,7 +36,8 @@
     "react-ace": "^7.0.1",
     "react-console-emulator": "^2.0.0",
     "react-dom": "^16.8.6",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "token": "^0.1.0"
   },
   "nodemonConfig": {
     "ext": "js"

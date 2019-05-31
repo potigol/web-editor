@@ -9,9 +9,8 @@ const adapter = new FileSync(dir + '/local/queue.json');
 const db = low(adapter);
 db.defaults({ queue: []}).write()
 
-module.exports = function(code, token = '2asf356h78a9s0gasd-q0w9eqw'){
+module.exports = function(code, token){
 	return new Promise((resolve, reject) => {
-		console.log(db.get('queue').find({token: token}).value())
 		// verify token
 		if(db.get('queue').find({token: token}).value()) resolve('please wait you past request!');
 		else{
@@ -29,8 +28,7 @@ module.exports = function(code, token = '2asf356h78a9s0gasd-q0w9eqw'){
 
 					// remove token from queue
 					db.get('queue').remove({token: token}).write();
-
-					console.log('sss: ', stdout)
+					
 					resolve(stdout);
 				});
 			});

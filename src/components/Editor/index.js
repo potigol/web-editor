@@ -11,15 +11,22 @@ import 'brace/theme/tomorrow_night';
 import RunNav from '../RunNav';
 import Console from '../Console';
 
+// token
+import token from '../../../libs/token';
+
 class Editor extends Component {
 	constructor(props){
 		super(props);
-		this.state = {code:""};
+		this.state = {
+			code:"",
+			token: token.generate()
+		};
 	}
 
 	runCode(callback){
 		axios.post('/api/run', {
-			code: this.state.code
+			code: this.state.code,
+			token: this.state.token
 		})
 		.then(response => {
 			callback(response.data);
