@@ -2,6 +2,8 @@ const fs = require('fs');
 const exec = require('child_process').exec;
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const bufferFileStream = require('buffer-file-stream');
+const del = require('delete');
 const dir = './libs/brutgol';
 
 // queue request manage..
@@ -20,19 +22,23 @@ module.exports = function(code, token){
 			db.get('queue').push({token: token}).write()
 
 			// creating a potigol file
-			fs.writeFile(`./libs/brutgol/local/files/${token}.poti`, code, error => {
-				if(error) return;
+			var _token = token.replace(/\//g, ''),
+			filePath = `${dir}/local/files/${_token}.poti`, 
+			bfs = bufferFileStream(filePath);
+			bfs.write(code);
 
-				// java settings
-				const command = `java -jar ${dir}/lib/potigol.jar ${dir}/local/files/${token}.poti`;
-				exec(command, (error, stdout, stderr) => {
-					if(error) return;
+			// java settings
+			const command = `java -jar ${dir}/lib/potigol.jar ${filePath}`;
+			exec(command, (error, stdout, stderr) => {
+				if(error) console.log(error);
 
-					// remove token from queue
-					db.get('queue').remove({token: token}).write();
-					
-					resolve(stdout);
-				});
+				// remove token from queue
+				db.get('queue').remove({token: token}).write();
+				
+				// remove file
+				del.sync([`${dir}/local/files/*`]);
+				
+				resolve(stdout);
 			});
 		}
 	});
