@@ -36,8 +36,8 @@ module.exports = function(code, token){
 				db.get('queue').remove({token: token}).write();
 				
 				// remove file
-				del.sync([`${dir}/local/files/*`]);
-				
+				del.sync([`${dir}/local/files/${_token}.poti`]);
+
 				resolve(stdout);
 			});
 		}
