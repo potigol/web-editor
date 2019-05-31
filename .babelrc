@@ -1,9 +1,6 @@
 {
   "presets": [
-    ["env", {
-      targets: { node: "8.11.4" },
-    }],
-    "stage-0",
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ]
 }

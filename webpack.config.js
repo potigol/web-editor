@@ -1,43 +1,42 @@
 const webpack = require('webpack');
-const path = require('path');
-// React v.16 uses some newer JS functionality, so to ensure everything
-// works across all browsers, we're adding babel-polyfill here.
-require('babel-polyfill');
 
 module.exports = {
-  entry: [
-    './src/index'
-  ],
-  module: {
-    loaders: [
-      { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
-      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=app/images/[name].[ext]"},
-    ]
-  },
-  resolve: {
-    modules: [
-      path.resolve('./'),
-      path.resolve('./node_modules'),
-    ],
-    extensions: ['.js','.scss'],
-  },
-  output: {
-    path: path.join(__dirname, '/dist'),
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devtool: 'cheap-eval-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-    proxy: {
-      '/api': 'http://localhost:3000/',
+    entry: './src/index.js',
+    module: {
+        rules: [
+        {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: ['babel-loader']
+        },
+        {
+            test: /\.(png|jpg|ttf|eot|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            use: [{
+                loader: 'file-loader'
+            }]
+        },
+        {
+            test: /\.css$/,
+            use: [ 'style-loader', 'css-loader' ]
+        }
+        ]
     },
-  },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  ]
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
+    output: {
+        path: __dirname + '/dist',
+        publicPath: '/',
+        filename: 'bundle.js'
+    },
+    plugins: [
+    new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        contentBase: './dist',
+        hot: true,
+        proxy: {
+          '/api': 'http://localhost:3000/',
+        }
+    }
 };

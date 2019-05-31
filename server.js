@@ -4,6 +4,10 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const appRouter = require('./routes');
 
+// body parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // set routers
 app.use('/api', appRouter);
 
@@ -16,5 +20,5 @@ app.get('/', function(request, response) {
 app.listen(PORT, error => (
   error
     ? console.error(error)
-    : console.info(`Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
+    : console.info(`Server na porta: ${PORT}`)
 ));

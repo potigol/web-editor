@@ -1,7 +1,5 @@
-// dev-server.js
 const express = require('express');
 const app = express();
-// Import routes
 const appRouter = require('./routes');
 
 app.use(express.json());

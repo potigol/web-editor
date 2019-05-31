@@ -1,2 +1,1 @@
-# web-editor
-Editor Web do Potigol
+# Potigol WebEditor DEV MODE

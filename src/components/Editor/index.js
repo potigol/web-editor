@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import brace from 'brace';
+import axios from 'axios';
 import AceEditor from 'react-ace';
 
 // editor themes
@@ -16,19 +17,16 @@ class Editor extends Component {
 		this.state = {code:""};
 	}
 
-	runCode(){
-		return (async () => {
-			const rawResponse = await fetch('/api/run', {
-				method: 'POST',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({code: this.state.code})
-			});
-			const content = await rawResponse.json();
-			return Promise.resolve(content);
-		})();
+	runCode(callback){
+		axios.post('/api/run', {
+			code: this.state.code
+		})
+		.then(response => {
+			callback(response.data);
+		})
+		.catch(error => {
+			callback('Error on compile!');
+		});
 	}
 
 	onChange(newValue) {
