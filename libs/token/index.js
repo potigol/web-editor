@@ -6,5 +6,5 @@ token.defaults.secret = process.env.seed || config.seed;
 token.defaults.timeStep = config.time;
 
 // standard
-module.exports.generate = () => {return token.generate(config.secret)};
-module.exports.valid = (_token) => {return token.verify(config.secret, _token)};
+module.exports.generate = (id) => {return token.generate(id)};
+module.exports.valid = (id, userToken) => {return token.verify(id, userToken)};

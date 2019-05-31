@@ -13,18 +13,23 @@ import Console from '../Console';
 
 // token
 import token from '../../../libs/token';
+import nanoid from 'nanoid';
 
 class Editor extends Component {
 	constructor(props){
 		super(props);
+
+		const userId = nanoid();
 		this.state = {
 			code:"",
-			token: token.generate()
+			userId: userId,
+			token: token.generate(userId)
 		};
 	}
 
 	runCode(callback){
 		axios.post('/api/run', {
+			userId: this.state.userId,
 			code: this.state.code,
 			token: this.state.token
 		})

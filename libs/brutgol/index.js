@@ -7,7 +7,9 @@ const dir = './libs/brutgol';
 // queue request manage..
 const adapter = new FileSync(dir + '/local/queue.json');
 const db = low(adapter);
+
 db.defaults({ queue: []}).write()
+db.get('queue').remove().write();
 
 module.exports = function(code, token){
 	return new Promise((resolve, reject) => {
