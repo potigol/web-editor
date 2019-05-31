@@ -1,0 +1,49 @@
+@media print {
+  button {
+    display: none;
+  }
+}
+
+pre {
+  font-size: 12pt;
+  font-family: "DejaVu Sans Mono","Consolas";
+}
+
+.numero {
+  color:darkblue;
+}
+
+.comentario {
+  color: green;
+  font-style: italic;
+}
+
+.atribuicao {
+  color: black;
+}
+
+.var {
+  color:red;
+}
+
+.chave, .fim, .operador {
+  color: purple;
+  font-weight: bolder;
+}
+
+.ponto {
+  color: darkblue;
+  font-style: italic;
+}
+
+.texto{
+  color:darkgoldenrod;
+}
+
+.parametro{
+  color:sienna;
+}
+
+.classe{
+  color:sienna;
+}
