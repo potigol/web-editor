@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
-const appRouter = require('./routes');
+const appRouter = require('./server/routes');
 
 // body parser
 app.use(express.json());

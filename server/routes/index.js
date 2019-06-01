@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var brutgol = require('../libs/brutgol');
-var token = require('../libs/token');
+var brutgol = require('../../libs/potigol');
+var token = require('../../libs/token');
 
 router.post('/run', function(req, res, next) {
 	const 
