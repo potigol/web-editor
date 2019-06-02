@@ -4,10 +4,10 @@ var brutgol = require('../../libs/potigol');
 var token = require('../../libs/token');
 
 router.post('/run', function(req, res, next) {
-	const 
-	code = req.body.code, 
-	userToken = req.body.token,
-	userId = req.body.userId;
+	const body = req.body,
+          code = body.code, 
+          userToken = body.token,
+	      userId = body.userId;
 	
 	if(code.trim().length > 2 && token.valid(userId, userToken)) 
 		brutgol(code, userToken).then(result => res.send(result));

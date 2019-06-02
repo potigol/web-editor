@@ -48,26 +48,29 @@ class Editor extends Component {
 	render() {
 		return (
 			<div className="code-editor-main">
-			<div className="left-asgn">
-			<AceEditor
-			mode="potigol"
-			theme="tomorrow_night"
-			name="editor-potigol"
-			editorProps={{$blockScrolling: true}}
-			width="100%"
-			height="calc(100vh - 54px)"
-			fontSize="16px"
-			showPrintMargin={false}
-			onChange = {this.onChange.bind(this)}
-			/>
-			</div>
-			<div className="right-asgn">
-			<Console 
-			className="console-react" 
-			run={this.runCode.bind(this)} 
-			noAutoScroll={true}
-			/>
-			</div>
+				<div className="left-asgn">
+                    <RunNav />
+					<AceEditor
+						mode="potigol"
+						theme="tomorrow_night"
+						name="editor-potigol"
+						editorProps={{$blockScrolling: false}}
+                        highlightActiveLine={false}
+                        showGutter={true}
+						width="100%"
+						height="calc(100vh - 89px)"
+						fontSize="16px"
+						showPrintMargin={false}
+						onChange = {this.onChange.bind(this)}
+					/>
+				</div>
+				<div className="right-asgn">
+					<Console 
+						className="console-react" 
+						run={this.runCode.bind(this)} 
+						noAutoScroll={true}
+					/>
+				</div>
 			</div>
 			);
 	}

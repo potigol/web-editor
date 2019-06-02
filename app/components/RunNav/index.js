@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 
 // assets
-import Img_iconPlay from '../../assets/imgs/icon_play.png'
+import close_icon from '../../assets/imgs/close.png';
+import new_icon from '../../assets/imgs/plus.png';
 
 const RunNav = function({run}){
 	return (
 		<div className="nav-file" onClick={run}>
-			<div className="file-run">
-				<div className="icon">
-					<img src={Img_iconPlay} alt="icon" />
-				</div>
+			<div className="file-run active">
 				<div className="title">
-					<span>Executar</span>
+					<span>main</span>
 				</div>
+				<div className="icon">
+					<img src={close_icon} />
+				</div>
+			</div>
+			<div className="new-tab">
+				<img src={new_icon} />
 			</div>
 		</div>
 	);

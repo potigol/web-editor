@@ -1,0 +1,8 @@
+var termo := "s voltaram"
+
+para i de 4 ate 1 passo -1 faca
+    se i == 1 entao termo := " voltou" fim
+    
+    escreva "a mamae gritou quack quack quack quack,"
+    escreva "mas so {i} patinho{termo} de la"
+fim

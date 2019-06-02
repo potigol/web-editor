@@ -51,7 +51,7 @@ class MyTerminal extends React.Component {
             <Terminal
             ref={this.terminal}
             commands={this.commands}
-            welcomeMessage={'Welcome to Potigol Web, write <help> to view all commands. Enjoy 🦐'}
+            welcomeMessage={'write <help> to view all commands. Enjoy 🦐'}
             promptLabel={'me@Camarao:~$'}
             textColor={'#e2e2e2'}
             background={'#111'}
