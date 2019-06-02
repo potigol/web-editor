@@ -17,7 +17,7 @@ db.get('queue').remove().write();
 module.exports = function(code, token){
 	return new Promise((resolve, reject) => {
 		// verify token
-		if(db.get('queue').find({token: token}).value()) 
+		if(db.get('queue').find({token: token}).value())
 			resolve('please wait you past request!');
 		else{
 			// send token to queue
@@ -25,7 +25,7 @@ module.exports = function(code, token){
 
 			// creating a potigol file
 			const _token = token.replace(/\//g, ''),
-			filePath = `${dir}/local/files/${_token}.poti`, 
+			filePath = `${dir}/local/files/${_token}.poti`,
 			bfs = bufferFileStream(filePath);
 			bfs.write(code);
 
@@ -37,7 +37,7 @@ module.exports = function(code, token){
 
     			// remove token from queue
 				db.get('queue').remove({token: token}).write();
-				
+
 				// remove file
 				del.sync([`${dir}/local/files/${_token}.poti`]);
 
