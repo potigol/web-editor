@@ -4,9 +4,9 @@
   "description": "Editor Web para Potigol",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html --out-dir build/",
-    "server": "node ./parcel",
-    "start": "node ./server dev"
+    "build": "parcel build client/index.html --out-dir build/",
+    "server": "node ./parcel-server",
+    "start": "nodemon ./server"
   },
   "repository": "https://github.com/potigol/web-editor",
   "author": "cripboy <cripboygit@gmail.com>",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@types/react": "^15.0.0 || ^16.0.0",
+    "nodemon": "^2.0.3",
     "react": ">=15",
     "react-dom": "^15.0.0 || ^16.0.0",
     "react-hot-loader": "^4.12.20",

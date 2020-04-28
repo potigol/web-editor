@@ -1,3 +1,7 @@
-const env = process.argv.slice(2)[0];
-const path = require("path");
-require(path.join(__dirname, env));
+const env = process.env.NODE_ENV || "development";
+const bundlers = {
+    production: "./prod",
+    development: "./dev"
+}
+
+require(bundlers[env]);
