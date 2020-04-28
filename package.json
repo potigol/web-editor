@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Editor Web para Potigol",
   "main": "index.js",
+  "scripts": {
+    "build": "parcel build src/index.html --out-dir build/",
+    "start:dev": "parcel src/index.html"
+  },
   "repository": "https://github.com/potigol/web-editor",
   "author": "cripboy <cripboygit@gmail.com>",
   "license": "MIT",
