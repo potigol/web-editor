@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/potigol/web-editor",
   "author": "cripboy <cripboygit@gmail.com>",
-  "license": "MIT",
+  "license": "GPL",
   "private": false,
   "devDependencies": {
     "parcel": "^1.12.4"
