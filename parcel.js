@@ -2,7 +2,7 @@ const ParcelProxyServer = require("parcel-proxy-server");
 
 const port = 8080;
 const server = new ParcelProxyServer({
-    entryPoint: "./src/index.html",
+    entryPoint: "./client/index.html",
     parcelOptions: {
         https: false
     },

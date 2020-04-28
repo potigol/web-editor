@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html --out-dir build/",
-    "start:dev": "node ./parcel.js"
+    "build:dev": "node ./parcel",
+    "start": "node ./server dev"
   },
   "repository": "https://github.com/potigol/web-editor",
   "author": "cripboy <cripboygit@gmail.com>",
