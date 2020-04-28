@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html --out-dir build/",
-    "build:dev": "node ./parcel",
+    "server": "node ./parcel",
     "start": "node ./server dev"
   },
   "repository": "https://github.com/potigol/web-editor",
@@ -18,7 +18,10 @@
     "parcel-proxy-server": "^1.1.0"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@types/react": "^15.0.0 || ^16.0.0",
+    "react": ">=15",
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-hot-loader": "^4.12.20",
+    "react-router-dom": "^5.1.2"
   }
 }
