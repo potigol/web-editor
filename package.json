@@ -1,28 +1,28 @@
 {
-  "name": "web-editor",
-  "version": "1.0.0",
-  "description": "Editor Web para Potigol",
-  "main": "index.js",
-  "scripts": {
-    "build": "parcel build client/index.html --out-dir build/",
-    "server": "node ./parcel-server",
-    "start": "nodemon ./server"
-  },
-  "repository": "https://github.com/potigol/web-editor",
-  "author": "cripboy <cripboygit@gmail.com>",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4",
-    "parcel-proxy-server": "^1.1.0"
-  },
-  "dependencies": {
-    "@types/react": "^15.0.0 || ^16.0.0",
-    "nodemon": "^2.0.3",
-    "react": ">=15",
-    "react-dom": "^15.0.0 || ^16.0.0",
-    "react-hot-loader": "^4.12.20",
-    "react-router-dom": "^5.1.2"
-  }
+    "name": "web-editor",
+    "version": "1.0.0",
+    "description": "Editor Web para Potigol",
+    "main": "index.js",
+    "scripts": {
+        "build": "parcel build client/index.html --out-dir build/",
+        "server": "node ./parcel-server",
+        "start": "nodemon ./server"
+    },
+    "repository": "https://github.com/potigol/web-editor",
+    "author": "cripboy <cripboygit@gmail.com>",
+    "license": "MIT",
+    "private": false,
+    "devDependencies": {
+        "parcel": "^1.12.4",
+        "parcel-bundler": "^1.12.4",
+        "parcel-proxy-server": "^1.1.0"
+    },
+    "dependencies": {
+        "@types/react": "^15.0.0 || ^16.0.0",
+        "nodemon": "^2.0.3",
+        "react": ">=15",
+        "react-dom": "^15.0.0 || ^16.0.0",
+        "react-hot-loader": "^4.12.20",
+        "react-router-dom": "^5.1.2"
+    }
 }
