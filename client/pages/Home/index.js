@@ -1,8 +1,12 @@
 import React from "react";
 
+import "./index.css";
+
+import Editor from "../../components/Editor";
+
 function Home()
 {
-    return(<p>Hello Worlds!</p>)
+    return(<Editor />)
 }
 
 export default Home;
