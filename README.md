@@ -12,11 +12,13 @@ import {Editor, Console, Drawer} from "web-editor-rep-dir";
 // note: all components have a 100% x 100% size
 function App()
 {
-  <div>
-    <Editor />
-    <Console />
-    <Drawer />
-  </div>
+  return(
+    <div>
+      <Editor />
+      <Console />
+      <Drawer />
+    </div>
+  )
 }
 
 export default App;
