@@ -4,5 +4,21 @@
 }
 
 body {
-    background-color: #333;
+    background-color: #111;
+}
+
+.half-horizontal {
+    display: flex;
+}
+
+.left-screen {
+    width: 55vw;
+}
+
+.half-vertical {
+    width: 45vw;
+}
+
+.sc-EHOje {
+    overflow: hidden!important;
 }
