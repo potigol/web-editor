@@ -8,7 +8,7 @@ class Console extends Component
         super();
 
         this.state = {
-            msg: "Web editor para potigol 🍤\nFeito por @cripboyjs ☕️"
+            msg: "Web editor para potigol 🍤\nFeito por @cripboyjs ❤️"
         }
     }
 
